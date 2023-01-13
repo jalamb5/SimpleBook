@@ -65,6 +65,6 @@ class UsersController < Devise::RegistrationsController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.fetch(:user, {})
+      params.require(:user).permit(:fname, :lname, :image)
     end
 end
