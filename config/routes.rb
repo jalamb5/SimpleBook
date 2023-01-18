@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'likes/create'
   resources :posts
   resources :likes
   devise_for :users, controllers: { registrations: 'users/registrations' }
