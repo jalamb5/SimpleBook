@@ -1,17 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
 <div class='header'>
-  <button>
-    <%= link_to 'Logout', destroy_user_session_path %>
-  </button>
-  
-  <button>
-    <%= link_to 'Login', new_user_session_path %>
-  </button>
-  
-  <button>
-    <%= link_to 'Sign Up', new_user_registration_path %>
-  </button>
+  <% if logged_in? %>
+    <%= "Hello #{current_user.fname}" %>
+    <button>
+      <%= link_to 'Edit Profile', edit_user_registration_path %>
+    </button>
+
+    <button>
+      <%= link_to 'Logout', destroy_user_session_path %>
+    </button>
+
+  <% else %>
+    <button>
+      <%= link_to 'Login', new_user_session_path %>
+    </button>
+
+    <button>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+    </button>
+  <% end %>
 </div>
 
 <h1>Posts</h1>
