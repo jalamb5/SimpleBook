@@ -2,4 +2,12 @@
   <%= post.content %>
   <%= "---" %>
   <%= User.find(post.user_id).fname %>
+  <p>
+    <button>
+      <%= link_to "Show post", post %>
+    </button>
+    <button>
+      <%= link_to 'Like', '#' %>
+    </button>
+  </p>
 </div>
