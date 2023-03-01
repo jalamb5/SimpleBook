@@ -4,7 +4,7 @@
   <% if logged_in? %>
     <%= "Hello #{current_user.fname}" %>
     <button>
-      <%= link_to 'Edit Profile', edit_user_registration_path %>
+      <%= link_to 'Profile', static_pages_profile_path %>
     </button>
 
     <button>

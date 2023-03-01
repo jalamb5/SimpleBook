@@ -4,11 +4,13 @@
 
 <div id="users">
   <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
+    <% unless current_user == user %>
+      <%= render user %>
+      <button>
+        <%= link_to 'Follow', '#' %>
+      </button>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New user", new_user_path %>
+
