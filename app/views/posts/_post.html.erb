@@ -2,6 +2,8 @@
   <%= post.content %>
   <%= "---" %>
   <%= User.find(post.user_id).fname %>
+  <%= "---" %>
+  <%= time_ago_in_words(post.created_at) %> ago.
   <p>
     <button>
       <%= link_to "Show post", post %>
