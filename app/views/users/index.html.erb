@@ -1,11 +1,12 @@
 <p style="color: green"><%= notice %></p>
+<%= render 'layouts/header' %>
 
 <h1>Users</h1>
 
 <div id="users">
   <% @users.each do |user| %>
     <% unless current_user == user %>
-      <%= render user %>
+      <%= user.fname %>
       <button>
         <%= link_to 'Follow', '#' %>
       </button>
