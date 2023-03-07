@@ -67,3 +67,7 @@
  .accountnav {
   padding-top: 10px;
  }
+
+ .postbtns {
+  display: inline-block;
+ }
