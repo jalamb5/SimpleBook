@@ -22,12 +22,13 @@
   <% end %>
 </div>
 
-<h1>Posts</h1>
+<%= link_to "New post", new_post_path %>
+<%= render 'posts/form' %>
+
+<h1>Feed</h1>
 
 <div id="posts">
   <% @posts.reverse.each do |post| %>
     <%= render post %>
   <% end %>
 </div>
-
-<%= link_to "New post", new_post_path %>
