@@ -1,73 +1,52 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-/*
-.theme {
-  color: #9068cf;
-  background-color: #030d36;
-}*/
-
- body {
+body {
   background-color: #030d36;
   color: #9068cf;
   display: flex;
   flex-direction: column;
   align-items: center;
- }
+}
 
- .post {
+.post {
   margin-bottom: 8px;
-  border-color: #9068cf;
-  border-style: double;
-  border-radius: .4rem;
+  border: double #9068cf;
+  border-radius: 0.4rem;
   padding: 5px;
- }
+}
 
- #posts {
+#posts {
   display: flex;
   flex-direction: column;
   width: fit-content;
- }
+}
 
- a {
+a {
   text-decoration: none;
   color: #030d36;
- }
+}
 
- h1 {
+h1 {
   font-size: 1.5em;
- }
+}
 
- button, #btn {
+button,
+#btn {
   background-color: #9068cf;
   color: black;
   border: none;
-  border-radius: .3rem;
- }
+  border-radius: 0.3rem;
+}
 
- #logo {
+#logo {
   text-decoration: none;
   font-size: 2em;
   font-weight: bold;
   color: #9068cf;
- }
+}
 
- .accountnav {
+.accountnav {
   padding-top: 10px;
- }
+}
 
- .postbtns {
+.postbtns {
   display: inline-block;
- }
+}
