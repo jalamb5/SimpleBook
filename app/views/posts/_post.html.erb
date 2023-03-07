@@ -1,15 +1,16 @@
-<div id="<%= dom_id post %>">
+<div id="<%= dom_id post %>" class=post >
   <%= post.content %>
-  <%= "---" %>
-  <%= User.find(post.user_id).fname %>
-  <%= "---" %>
-  <%= time_ago_in_words(post.created_at) %> ago.
-  <p>
+  <div>
+    Posted by: <%= User.find(post.user_id).fname %>
+    <%= "-" %>
+    <%= time_ago_in_words(post.created_at) %> ago.
+  </div>
+  <div>
     <button>
       <%= link_to "Show post", post %>
     </button>
     <button>
       <%= link_to 'Like', '#' %>
     </button>
-  </p>
+  </div>
 </div>
