@@ -22,6 +22,9 @@
  body {
   background-color: #030d36;
   color: #9068cf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
  }
 
  .post {
@@ -43,7 +46,11 @@
   color: #030d36;
  }
 
- button {
+ h1 {
+  font-size: 1.5em;
+ }
+
+ button, #btn {
   background-color: #9068cf;
   color: black;
   border: none;
@@ -52,11 +59,11 @@
 
  #logo {
   text-decoration: none;
-  font-size: 1.7em;
+  font-size: 2em;
   font-weight: bold;
   color: #9068cf;
  }
 
  .accountnav {
-  margin-top: 10px;
+  padding-top: 10px;
  }
