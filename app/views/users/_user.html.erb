@@ -1,3 +1,13 @@
 <div id="<%= dom_id user %>">
   <%= "First Name:  #{user.fname}" %>
+  <button>
+    <%= link_to 'Edit Profile', edit_user_registration_path %>
+  </button>
+  <div>
+    Your Posts:
+    <% user.posts.each do |post| %>
+      <%= render post %>
+    <% end %>
+  </div>
+
 </div>
