@@ -6,11 +6,7 @@
     <%= time_ago_in_words(post.created_at) %> ago.
   </div>
   <div>
-    <button>
-      <%= link_to "Show post", post %>
-    </button>
-    <button>
-      <%= link_to 'Like', new_like_path %>
-    </button>
+    <%= button_to "Show post", post %>
+    <%= button_to "Like", post_likes_path(post), method: :post %>
   </div>
 </div>

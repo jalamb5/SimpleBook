@@ -60,6 +60,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def like
+    @post = Post.all.find(params[:id])
+    Like.create(user_id: current_user.id, post_id: @post.id)
+    redirect_to post_path(@post)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

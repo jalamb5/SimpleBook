@@ -5,8 +5,17 @@ class LikesController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @like = @post.likes.create(like_params)
-    @like.save
+    @like = Like.new(like_params)
+
+    respond_to do |format|
+      if @like.save
+        format.html { redirect_to post_url(@post), notice: "Liked" }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @like.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

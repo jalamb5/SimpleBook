@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'static_pages/profile'
-  resources :posts
-  resources :likes
+  resources :posts do
+    resources :likes
+  end
+
+
   devise_for :users # , controllers: { registrations: 'users/registrations' }
 
   devise_scope :user do
