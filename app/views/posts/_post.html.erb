@@ -4,6 +4,7 @@
     Posted by: <%= User.find(post.user_id).fname %>
     <%= "-" %>
     <%= time_ago_in_words(post.created_at) %> ago.
+    Likes: <%= post.likes.count unless post.likes.nil? %>
   </div>
   <div>
     <%= button_to "Show post", post %>
