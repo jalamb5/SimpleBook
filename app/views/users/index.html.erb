@@ -6,10 +6,8 @@
 <div id="users">
   <% @users.each do |user| %>
     <% unless current_user == user %>
-      <%= user.fname %>
-      <button>
-        <%= link_to 'Follow', '#' %>
-      </button>
+      <%= user.fname %> : 
+      <%= link_to 'Follow', '#' %>
     <% end %>
   <% end %>
 </div>
