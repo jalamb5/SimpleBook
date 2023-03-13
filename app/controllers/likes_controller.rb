@@ -5,14 +5,14 @@ class LikesController < ApplicationController
       flash[:notice] = @like.errors.full_messages.to_sentence
     end
 
-    redirect_to @like.post
+    redirect_back_or_to '/'
   end
 
   def destroy
     @like = current_user.likes.find(params[:id])
     post = @like.post
     @like.destroy
-    redirect_to post
+    redirect_back_or_to '/'
   end
 
   private
