@@ -7,11 +7,13 @@
   </div>
   <div>
     <%= button_to "Show post", post_path(post), method: :get %>
-    <%= @post.likes.count %> Likes
+    <%= post.likes.count %> Likes
 
     <% like = current_user.likes.find_by(post: @post) %>
     <% if like.nil? %>
       <%= button_to "Like", likes_path, params: { like: { post_id: @post.id } }, method: :post %>
+    <% else %>
+     <%= button_to "Unlike", like_path(like), method: :delete %>
     <% end %>
   </div>
 </div>

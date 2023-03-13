@@ -1,16 +1,11 @@
 class LikesController < ApplicationController
   def create
     @like = current_user.likes.new(like_params)
-
-    respond_to do |format|
-      if @like.save
-        format.html { redirect_to post_url(@post), notice: "Liked" }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
-      end
+    if !@like.save
+      flash[:notice] = @like.errors.full_messages.to_sentence
     end
+
+    redirect_to @like.post
   end
 
   def destroy
