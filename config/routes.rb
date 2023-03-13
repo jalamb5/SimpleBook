@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   get 'static_pages/profile'
-  resources :posts do
-    resources :likes
-  end
-
+  resources :posts
+  resources :likes, only: %i[create destroy]
 
   devise_for :users # , controllers: { registrations: 'users/registrations' }
 

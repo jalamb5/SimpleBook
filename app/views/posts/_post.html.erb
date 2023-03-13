@@ -4,10 +4,14 @@
     Posted by: <%= User.find(post.user_id).fname %>
     <%= "-" %>
     <%= time_ago_in_words(post.created_at) %> ago.
-    Likes: <%= post.likes.count unless post.likes.nil? %>
   </div>
   <div>
-    <%= button_to "Show post", post %>
-    <%= button_to "Like", post_likes_path(post), method: :post %>
+    <%= button_to "Show post", post_path(post), method: :get %>
+    <%= @post.likes.count %> Likes
+
+    <% like = current_user.likes.find_by(post: @post) %>
+    <% if like.nil? %>
+      <%= button_to "Like", likes_path, params: { like: { post_id: @post.id } }, method: :post %>
+    <% end %>
   </div>
 </div>

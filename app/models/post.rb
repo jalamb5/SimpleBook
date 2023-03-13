@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :users, through: :likes
+  has_many :likes
 
   def likes
     Like.where(id: self.id).ids
