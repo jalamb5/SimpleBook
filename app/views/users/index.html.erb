@@ -6,8 +6,9 @@
 <div id="users">
   <% @users.each do |user| %>
     <% unless current_user == user %>
-      <%= user.fname %> : 
-      <%= link_to 'Follow', '#' %>
+      <%= user.fname %> :
+      <%= button_to 'Follow', '#', method: :post %>
+      <%= button_to 'View Profile', user_path(user), method: :get %>
     <% end %>
   <% end %>
 </div>

@@ -8,8 +8,10 @@
     <% if logged_in? %>
       <%= "Hello #{current_user.fname}" %>
 
-      <% unless current_page? static_pages_profile_path %>
-        <%= button_to 'Profile', static_pages_profile_path, method: :get %>
+      <% unless current_page? user_path(current_user) %>
+        <%= button_to 'Profile', user_path(current_user), method: :get %>
+      <% else %>
+        <%= button_to 'Edit Profile', edit_user_registration_path, method: :get %>
       <% end %>
 
       <%= button_to 'Logout', destroy_user_session_path, method: :get %>

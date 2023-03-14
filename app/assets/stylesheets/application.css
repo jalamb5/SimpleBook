@@ -1,9 +1,10 @@
 body {
   background-color: #030d36;
   color: #9068cf;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  /* flex-direction: column; */
+  /* align-items: center; */
 }
 
 .post {
@@ -13,10 +14,9 @@ body {
   padding: 5px;
 }
 
-#posts {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
+#feed {
+  grid-column: 2;
+  padding-right: 10%;
 }
 
 a {
@@ -36,6 +36,10 @@ button,
   border-radius: 0.3rem;
 }
 
+header {
+  grid-column: 1;
+}
+
 #logo {
   text-decoration: none;
   font-size: 2em;
@@ -49,4 +53,9 @@ button,
 
 .postbtns {
   display: inline-block;
+}
+
+.content {
+  font-size: 1.1rem;
+  margin-top: -.1%;
 }

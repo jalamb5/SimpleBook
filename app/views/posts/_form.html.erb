@@ -1,6 +1,6 @@
 <%= form_with(model: @post) do |form| %>
   <%= render 'posts/errors' %>
-  <%= form.text_area :content, placeholder: 'Compose a new post...' %>
+  <%= form.text_area :content, placeholder: 'Compose a new post...', rows: 4, style: 'width:100%;' %>
   <div>
     <%= form.submit id: 'btn' %>
   </div>

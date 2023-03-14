@@ -2,11 +2,11 @@
 
 <%= render 'layouts/header' %>
 
-<%= render 'posts/form' %>
+<div id="feed">
+  <%= render 'posts/form' %>
 
-<h1>Feed</h1>
+  <h1>Feed</h1>
 
-<div id="posts">
   <% @posts.reverse.each do |post| %>
     <%= render post %>
   <% end %>
