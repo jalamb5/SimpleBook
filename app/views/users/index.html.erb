@@ -1,16 +1,17 @@
 <p style="color: green"><%= notice %></p>
 <%= render 'layouts/header' %>
 
-<h1>Users</h1>
+<div class='feed'>
+  <h1>Users</h1>
 
-<div id="users">
-  <% @users.each do |user| %>
-    <% unless current_user == user %>
-      <%= user.fname %> :
-      <%= button_to 'Follow', '#', method: :post %>
-      <%= button_to 'View Profile', user_path(user), method: :get %>
+  <div id="users">
+    <% @users.each do |user| %>
+      <% unless current_user == user %>
+        <%= "#{user.fname} #{user.lname}" %>
+        <%= button_to 'View Profile', user_path(user), method: :get %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 
