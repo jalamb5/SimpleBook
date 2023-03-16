@@ -8,18 +8,21 @@
     <% if logged_in? %>
       <%= "Hello #{current_user.fname}" %>
 
-      <% unless current_page? user_path(current_user) %>
-        <%= button_to 'Profile', user_path(current_user), method: :get %>
-      <% else %>
+      <% if current_page? user_path(current_user) %>
         <%= button_to 'Edit Profile', edit_user_registration_path, method: :get %>
+      <% else %>
+        <%= button_to 'Profile', user_path(current_user), method: :get %>
       <% end %>
 
+      <%= button_to 'See Other Users', users_path, method: :get %>
       <%= button_to 'Logout', destroy_user_session_path, method: :get %>
 
     <% else %>
-      <%= button_to 'Login', new_user_session_path, method: :get %>
+      Welcome to SimpleBook! <br>
+      Log in or Sign up to continue.
 
-      <%= button_to 'Sign Up', new_user_registration_path, method: :get %>
+
     <% end %>
+    <br>
   </div>
 </header>

@@ -19,4 +19,10 @@
      <%= button_to "Unlike", like_path(like), method: :delete %>
     <% end %>
   </div>
+  <% if post.user_id == current_user.id && current_page?(post_path(post)) %>
+    <div class='postbtns'><br>
+      <%= button_to "Edit this post", edit_post_path(post) %>
+      <%= button_to "Destroy this post", post, method: :delete %>
+    </div>
+  <% end %>
 </div>

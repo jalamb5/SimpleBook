@@ -1,6 +1,6 @@
 :root {
-  --main-color: #6e4a12;
-  --secondary-color: #52e4e0;
+  --main-color: #a426fb;
+  --secondary-color: #f9ff18;
 }
 
 body {
@@ -34,7 +34,7 @@ h1 {
 }
 
 button,
-#btn {
+#btn, .btn {
   background-color: var(--secondary-color);
   color: var(--main-color);
   border: none;

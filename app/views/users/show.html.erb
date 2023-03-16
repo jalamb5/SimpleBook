@@ -2,10 +2,3 @@
 <%= render 'layouts/header' %>
 
 <%= render @user %>
-<%= render 'follow_form' if logged_in? %>
-
-<div>
-  <%= link_to "Show other users", users_path %>
-  |
-  <%= link_to "Back to Posts", posts_path %>
-</div>

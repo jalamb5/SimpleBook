@@ -1,14 +1,14 @@
 <div id="<%= dom_id user %>">
   <%= "Name:  #{user.fname} #{user.lname}" %><br>
-  <%= "Email: #{user.email}" %><br>
+  <%= "Email: #{user.email}" if user == current_user %><br>
   <%= "Following: #{@user.following.count}"%>
-  <%= "Followers: #{@user.followers.count}"%>
+  <%= "Followers: #{@user.followers.count}"%><br>
+  <%= render 'follow_form' unless current_page? user_path(current_user) %><br>
 
   <div>
-    Posts:
+    <h1>Posts:</h1>
     <% user.posts.each do |post| %>
       <%= render post %>
     <% end %>
   </div>
-
 </div>
