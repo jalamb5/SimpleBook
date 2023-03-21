@@ -4,12 +4,13 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @post = Post.all.find(params[:id])
     @comment = current_user.comments.build(comment_params)
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to post_url(@comment), notice: "Comment was successfully created." }
-        format.json { render :show, status: :created, location: @comment }
+        format.html { redirect_to post_url(@post), notice: "Comment was successfully created." }
+        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

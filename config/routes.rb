@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get 'static_pages/profile'
-  resources :posts
+  resources :posts do
+    resources :comments, only: %i[create destroy]
+  end
+
   resources :likes, only: %i[create destroy]
   resources :relationships, only: %i[create destroy]
-  resources :comments, only: %i[create destroy]
 
   devise_for :users
 
