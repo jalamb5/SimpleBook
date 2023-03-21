@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'comments/new'
+  get 'comments/create'
+  get 'comments/destroy'
   get 'static_pages/profile'
   resources :posts
   resources :likes, only: %i[create destroy]
