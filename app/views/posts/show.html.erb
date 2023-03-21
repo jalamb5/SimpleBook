@@ -1,3 +1,8 @@
 <p style="color: green"><%= notice %></p>
 <%= render 'layouts/header' %>
 <%= render @post %>
+<%= link_to "Add Comment", new_comment_path(post_id: @post.id) %>
+
+<% @post.comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
