@@ -6,7 +6,7 @@
   <%= render 'follow_form' unless current_page? user_path(current_user) %><br>
 
   <div>
-    <h1>Posts:</h1>
+    <h1>Posts: </h1>
     <% user.posts.each do |post| %>
       <%= render post %>
     <% end %>
