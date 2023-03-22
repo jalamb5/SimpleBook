@@ -4,10 +4,10 @@
   <%= "Following: #{@user.following.count}"%>
   <%= "Followers: #{@user.followers.count}"%><br>
   <%= render 'follow_form' unless current_page? user_path(current_user) %><br>
-  <%= render 'follow_request_form' %>
+  <%# <%= render 'follow_request_form' %>
 
   <div>
-    <h1>Posts: </h1>
+    <h1>Posts:</h1>
     <% user.posts.each do |post| %>
       <%= render post %>
     <% end %>
