@@ -13,6 +13,14 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  has_many :requested_relationships, class_name: 'Relationship', foreign_key: 'requester_id', dependent: :destroy
+  has_many :requests, through: :requested_relationships, source: :requester
+
+  # Send a follow request
+  def follow_request(other_user)
+    other_user.requests << self
+  end
+
   # Follows a user
   def follow(other_user)
     following << other_user
