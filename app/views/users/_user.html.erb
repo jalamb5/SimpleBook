@@ -1,4 +1,5 @@
 <div id="<%= dom_id user %>">
+  <%= image_tag @user.gravatar_url %>
   <%= "Name:  #{user.fname} #{user.lname}" %><br>
   <%= "Email: #{user.email}" if user == current_user %><br>
   <%= "Following: #{@user.following.count}"%>
