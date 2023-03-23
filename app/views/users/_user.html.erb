@@ -1,9 +1,11 @@
 <div id="<%= dom_id user %>">
-  <%= image_tag @user.gravatar_url %>
-  <%= "Name:  #{user.fname} #{user.lname}" %><br>
-  <%= "Email: #{user.email}" if user == current_user %><br>
-  <%= "Following: #{@user.following.count}"%>
-  <%= "Followers: #{@user.followers.count}"%><br>
+  <div class='user_info'>
+    <%= image_tag @user.gravatar_url, id:'profile_image' %>
+    <%= "Name:  #{user.fname} #{user.lname}" %><br>
+    <%= "Email: #{user.email}" if user == current_user %><br>
+    <%= "Following: #{@user.following.count}"%>
+    <%= "Followers: #{@user.followers.count}"%><br>
+  </div>
   <%= render 'follow_form' unless current_page? user_path(current_user) %><br>
   <%# <%= render 'follow_request_form' %>
 

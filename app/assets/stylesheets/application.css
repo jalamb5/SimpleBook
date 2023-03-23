@@ -65,3 +65,10 @@ header {
   margin-top: -.1%;
 }
 
+.user_info {
+  display: grid;
+}
+
+#profile_image {
+  border-radius: .5rem;
+}
