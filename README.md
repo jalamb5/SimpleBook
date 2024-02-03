@@ -1,4 +1,12 @@
 # README
 
-Facebook-style clone for The Odin Project.
-[Link to Project Page](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+A basic clone of Facebook-style social media site.
+
+![Simple Book Screenshot](https://justinlamb.org/assets/simplebook.png)
+
+## Features
+- Account creation via Devise
+- Create, Edit, Destroy posts
+- Likes
+- Comment creation
+- Following other users
