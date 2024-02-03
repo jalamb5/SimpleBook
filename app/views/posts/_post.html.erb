@@ -1,15 +1,16 @@
 <div id="<%= dom_id post %>" class="post" >
   <p class="content"><%= post.content %></p>
-  <div>
+  <div class="meta">
     Posted by: <%= User.find(post.user_id).fname %>
     <%= "-" %>
     <%= time_ago_in_words(post.created_at) %> ago.
   </div>
   <div>
 
+    <div class="counts">
     <%= post.likes.count %> Likes -
     <%= post.comments.count %> Comments
-
+    </div>
     <% like = current_user.likes.find_by(post: post) %>
     <% if like.nil? %>
       <%= button_to "Like", likes_path, params: { like: { post_id: post.id } }, method: :post %>
@@ -21,7 +22,7 @@
   <% if post.user_id == current_user.id && current_page?(post_path(post)) %>
     <div class='postbtns'><br>
       <%= button_to "Edit this post", edit_post_path(post) %>
-      <%= button_to "Destroy this post", post, method: :delete %>
+      <%= button_to "Delete this post", post, method: :delete %>
     </div>
   <% end %>
   <% unless current_page? post_path(post) %>

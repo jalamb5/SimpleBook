@@ -1,6 +1,6 @@
 <div id="<%= dom_id comment %>" class="comment" >
   <p class="content"><%= comment.content %></p>
-  <div>
+  <div class="meta">
     Posted by: <%= User.find(comment.user_id).fname %>
     <%= "-" %>
     <%= time_ago_in_words(comment.created_at) %> ago.
