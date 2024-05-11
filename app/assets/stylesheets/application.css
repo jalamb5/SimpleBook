@@ -1,5 +1,5 @@
 :root {
-  --main-color: #F5FBEF;
+  --main-color: #fbfbef;
   --secondary-color: #124E78;
 }
 
@@ -11,8 +11,8 @@ body {
   font-family: "Ubuntu Sans", sans-serif;
 }
 
-.post {
-  margin-bottom: 8px;
+.post, .comment {
+  margin-bottom: 1rem;
   box-shadow: inset 0 0 0.25em 0 var(--secondary-color);
   background-color: white;
   border-radius: 0.4rem;
@@ -20,18 +20,7 @@ body {
 }
 
 .comments {
-  margin-bottom: 8px;
-  border: double var(--secondary-color);
-  border-radius: 0.4rem;
-  padding: 5px;
   grid-column: 2;
-}
-
-.comment {
-  margin-bottom: 8px;
-  border: solid var(--secondary-color);
-  border-radius: 0.4rem;
-  padding: 5px;
 }
 
 .feed, #comment_form {
@@ -55,11 +44,26 @@ button,
   color: var(--main-color);
   border: none;
   border-radius: 0.3rem;
+  padding: .25rem;
+}
+
+.button_to {
+  padding-bottom: .25rem;
 }
 
 header {
   grid-column: 1;
-  padding: .5rem;
+  padding-right: 1.5rem;
+  padding-left: .5rem;
+}
+
+textarea {
+  border-radius: 0.3rem;
+  box-shadow: inset 0 0 0.25em 0 var(--secondary-color);
+  background-color: white;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #logo {
@@ -71,10 +75,13 @@ header {
 
 .accountnav {
   padding-top: 10px;
+  display: grid;
+  gap: .5rem;
 }
 
 .postbtns {
-  display: inline-block;
+  display: grid;
+  gap: .25rem;
 }
 
 .content {
@@ -90,6 +97,8 @@ header {
 .counts {
   font-size: .95rem;
   opacity: .85;
+  padding-bottom: .25rem;
+  padding-top: .1rem;
 }
 
 .user_info {
