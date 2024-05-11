@@ -1,8 +1,8 @@
-# SimpleBook
+# Socialize
 
 A Facebook-style social media site built with Ruby on Rails.
 
-![Simple Book Screenshot](https://justinlamb.org/assets/simplebook.png)
+![Socialize Screenshot](./socialize.png)
 
 ## Features
 - Account creation via Devise
