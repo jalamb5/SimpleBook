@@ -8,13 +8,15 @@ body {
   color: var(--secondary-color);
   display: grid;
   grid-template-columns: 1fr 3fr;
+  font-family: "Ubuntu Sans", sans-serif;
 }
 
 .post {
   margin-bottom: 8px;
-  border: double var(--secondary-color);
+  box-shadow: inset 0 0 0.25em 0 var(--secondary-color);
+  background-color: white;
   border-radius: 0.4rem;
-  padding: 5px;
+  padding: 1.5rem;
 }
 
 .comments {
