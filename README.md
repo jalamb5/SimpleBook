@@ -1,6 +1,6 @@
 # SimpleBook
 
-A basic clone of Facebook-style social media site built with Ruby on Rails.
+A Facebook-style social media site built with Ruby on Rails.
 
 ![Simple Book Screenshot](https://justinlamb.org/assets/simplebook.png)
 
